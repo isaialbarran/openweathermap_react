@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#weather_div{
+  padding: 2%;
+  background-color: lightblue;
+  margin: 1% auto;
+  display: inline-block;
+}
