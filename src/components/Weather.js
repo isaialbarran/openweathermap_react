@@ -3,13 +3,13 @@ import React, {Component} from 'react';
 class Weather extends Component {
 
     showDetails = () => {
-        const {name, weather, main, clouds} = this.props.results;
+        const {name, weather, main} = this.props.results;
 
-        if (!name || !weather || !main || !clouds)
+        if (!name || !weather || !main)
             return null;
         else {
             const kelvin = 273.15;
-            const urlIcon = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
+            const urlIcon = `https://openweathermap.org/img/w/${weather[0].icon}.png`;
             const alt = `clima de ${name}`;
 
             return (

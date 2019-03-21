@@ -33,7 +33,7 @@ class App extends Component {
   reqApi = (city,country) => {
     const appId = '735229ccf1f5abc43613d2fd59bf7374';
     //read url and add API key
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appId}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appId}`;
     //axios to get the data
     axios.get(url)
         .then(res => {
