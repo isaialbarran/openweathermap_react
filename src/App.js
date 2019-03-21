@@ -14,7 +14,20 @@ class App extends Component {
     error: false,
     cityNotFound: false,
     dataForm: {},
-    results: {}
+    results: {},
+    countries: {}
+  };
+
+  componentWillMount() {
+      let url = `https://restcountries.eu/rest/v2/all`;
+      axios.get(url)
+          .then(res => {
+            const dataCountriesApi = res.data;
+            this.setState({countries:dataCountriesApi});
+          })
+          .catch(e => {
+            console.log(e);
+          });
   };
 
   reqApi = (city,country) => {
@@ -59,8 +72,9 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Header title="Open Wheater Map"/>
-        <Form dataQuery={this.dataQuery}/>
+        <Header title="Open Weather Map"/>
+        <Form dataQuery={this.dataQuery}
+              countries={this.state.countries}/>
         {result}
       </div>
     );

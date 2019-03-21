@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 class Weather extends Component {
 
     showDetails = () => {
-        const {name, weather, main} = this.props.results;
+        const {name, weather, main, clouds} = this.props.results;
 
-        if (!name || !weather || !main)
+        if (!name || !weather || !main || !clouds)
             return null;
         else {
             const kelvin = 273.15;
@@ -15,11 +15,11 @@ class Weather extends Component {
             return (
                 <div id="weather_div">
                     <h3>Weather in: {name}</h3>
-                    <p>Actual: {(main.temp - kelvin).toFixed(2)}
+                    <p>Actual: {(main.temp - kelvin).toFixed(2)} &#8451;
                         <img src={urlIcon} alt={alt}/>
                     </p>
-                    <p>Max: {(main.temp_max - kelvin).toFixed(2)}</p>
-                    <p>Min: {(main.temp_min - kelvin).toFixed(2)}</p>
+                    <p>Max: {(main.temp_max - kelvin).toFixed(2)} &#8451;</p>
+                    <p>Min: {(main.temp_min - kelvin).toFixed(2)} &#8451;</p>
                 </div>
             );
         }

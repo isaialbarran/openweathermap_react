@@ -2,9 +2,11 @@ import React from 'react';
 
 const Error = (props) => {
     return (
-        <div className="alert alert-danger m-5" role="alert">
-            {props.message}
-        </div>
+            <div className="row justify-content-center m-3">
+                <div className="alert alert-danger col-md-auto" role="alert">
+                    {props.message}
+                </div>
+            </div>
     );
 };
 
